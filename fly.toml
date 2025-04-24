@@ -1,0 +1,27 @@
+# fly.toml app configuration file generated for brave-server-red-rain-282 on 2025-04-23T19:10:35-07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "brave-server-red-rain-282"
+primary_region = "iad"
+
+[build]
+dockerfile = "Dockerfile"
+
+[env]
+PORT = "8080"
+BRAVE_API_KEY = "BSAWPV6XY5SLgmaxyEWTFniH66OWL24"
+
+[http_service]
+auto_start_machines = true
+auto_stop_machines = "stop"
+force_https = true
+internal_port = 8080
+min_machines_running = 0
+processes = ["app"]
+
+[[vm]]
+cpu_kind = "shared"
+cpus = 1
+memory = "512mb"
