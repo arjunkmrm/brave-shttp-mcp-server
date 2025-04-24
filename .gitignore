@@ -50,3 +50,6 @@ coverage/
 
 # Fly.io
 .fly/ 
+
+# Internal references
+docs/
